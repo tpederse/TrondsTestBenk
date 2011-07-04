@@ -9,7 +9,8 @@ public class KallenderOppgaveTest {
 	@Test
 	public void testListeElementVanlig() {
 		assertEquals(new Integer(1952),KalenderOppgave.hentListe().get(0));
-		assertEquals(new Integer(1956),KalenderOppgave.hentListe().get(1));		
+		assertEquals(new Integer(1956),KalenderOppgave.hentListe().get(1));	
+		assertEquals(61,KalenderOppgave.hentListe().size());
 	}
 	
 	@Test
