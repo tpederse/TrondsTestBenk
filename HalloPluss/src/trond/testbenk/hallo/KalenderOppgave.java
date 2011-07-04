@@ -10,12 +10,16 @@ public class KalenderOppgave {
 		ArrayList<Integer> returnValue = new ArrayList<Integer>();
 		
 		for (int yearToCheck = 1950; yearToCheck < 2201; yearToCheck++) {
-			if(yearToCheck % 4 == 0 		// delelig på fire
-			   && ! (yearToCheck % 100 == 0   // og ikke delelig på 100
-					 && !(yearToCheck % 400 == 0)  //hvis ikke delielig på 400
-			))returnValue.add(yearToCheck);
+			if(isSkuddaar(yearToCheck))returnValue.add(yearToCheck);
 		}
 		return returnValue;
+	}
+
+	private static boolean isSkuddaar(int yearToCheck) {
+		if(yearToCheck % 400 == 0) return true;
+		if(yearToCheck % 100 == 0) return false;
+		if(yearToCheck % 4 == 0) return true;
+		return false;
 	}
 	
 
